@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS alx_book_store;
 -- Use the newly created database
 USE alx_book_store;
 
-CREATE TABLE books(
+CREATE TABLE Books(
     book_id INT PRIMARY KEY
     title VARCHAR(130)
     author_id INT FOREIGN KEY
@@ -24,14 +24,13 @@ CREATE TABLE Customers(
     address TEXT
 );
 
-CREATE TABLE stores(
+CREATE TABLE Orders(
     order_id INT PRIMARY KEY
     customer_id INT FOREIGN KEY
     order_date DATE
     FOREIGN KEY(customer_id) REFERENCING Customers(customer_id)
 )
-
-CREATE TABLE order_Details(
+CREATE TABLE Order_Details(
     orderdetailid INT PRIMARY KEY
     order_id FOREIGN KEY
     book_id FOREIGN KEY

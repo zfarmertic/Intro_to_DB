@@ -9,7 +9,7 @@ CREATE TABLE Books(
     author_id INT FOREIGN KEY
     price DOUBLE
     publication_date publication_date
-    FOREIGN KEY(author_id) REFERENCING Authors(author_id)
+    FOREIGN KEY(author_id) REFERENCES Authors(author_id)
 );
 
 CREATE TABLE Authors(
@@ -28,13 +28,13 @@ CREATE TABLE Orders(
     order_id INT PRIMARY KEY
     customer_id INT FOREIGN KEY
     order_date DATE
-    FOREIGN KEY(customer_id) REFERENCING Customers(customer_id)
+    FOREIGN KEY(customer_id) REFERENCES Customers(customer_id)
 )
 CREATE TABLE Order_Details(
     orderdetailid INT PRIMARY KEY
     order_id FOREIGN KEY
     book_id FOREIGN KEY
     quantity DOUBLE
-    FOREIGN KEY(order_id) REFERENCING Stores(order_id)
-    FOREIGN KEY(book_id) REFERENCING books(book_id)
+    FOREIGN KEY(order_id) REFERENCES Stores(order_id)
+    FOREIGN KEY(book_id) REFERENCES books(book_id)
 )

@@ -1,3 +1,8 @@
+CREATE DATABASE IF NOT EXISTS alx_book_store;
+
+-- Use the newly created database
+USE alx_book_store;
+
 CREATE TABLE books(
     book_id INT PRIMARY KEY
     title VARCHAR(130)
